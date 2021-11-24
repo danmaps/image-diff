@@ -47,9 +47,8 @@ if uploadFile1 is not None:
             twoimage = st.image(get_diff(uploadFile1,uploadFile2), caption='',use_column_width=True)
         else:
             # they're different pictures...
-            different_image = get_diff(uploadFile1,uploadFile2)
-            different_image.paste(Image.open('different.jpg').resize([464,81]),(522,1324))
-            st.image(different_image)
+            twoimage = st.image(get_diff(uploadFile1,uploadFile2), caption='',use_column_width=True)
+
 
             # if they have the same dimensions, we can subtract them to visually inspect differences
             if check_dims(uploadFile1,uploadFile2):
